@@ -12,37 +12,12 @@ export class AppComponent implements OnInit  {
   no: number = 42;
   flag : boolean = false;
 
-  
 
   ngOnInit(): void {
-    // console.log(Subjects);
-    // this.test();
-    // console.log(this.getStudents());
+    
 
     let students = this.getStudents();
-    //console.log(students);
-
-    // for (let i=0; i<students.length; i++) {
-    //   if (students[i].age > 22) {
-    //     console.log('Recode ',students[i]);
-    //   }
-    // }
-
-    // students.forEach(function(std, ind) {
-    //   //console.log(std);
-
-    //     if (std.age > 22) {
-    //       console.log('Recode ',std);
-    //     }
-    // })
-
-    // students.forEach((std, ind) => {
-    //   //console.log(std);
-
-    //     if (std.age > 22) {
-    //       console.log('Recode at index ',std, ind);
-    //     }
-    // });
+    
 
     let studentsNew = students.filter(std => {
       return std.age > 22;
@@ -51,39 +26,26 @@ export class AppComponent implements OnInit  {
     console.log(studentsNew);
 
 
+    // 10-July-2019
 
-//    for (let )
+    let test : (name: string, no: number) => string;
+    test = this.createStudentsId;
+   
+    let newId: string = test('khilen', 12);
+    console.log(newId);
 
+    let requiredOptional = this.createStudentsId('Khilen');
 
-    //let stuData = this.getStudents();
+    // Calling Rest
 
-    //let age = this.findMinimumAge(stuData);
-    //console.log('Min Age = : ' + age);
+    console.log(this.getStudentsRest('Khilen', 1,2));
 
-
-    //let test: (name: string, id: number) => string;
-
-
-
-
-
-    // test = this.createStudentsId;
-    // let message = test('abc', 5);
-    // console.log(test)
+    // 'khilen', [1,2,3]
   }
   
   title = 'myYouTube';
 
   constructor() {
-    // console.log('The Value of Flag ' + this.flag);
-
-    // console.log(this.getStudents());
-    // // Call Name of Books.
-    // // let students = this.getStudentByFavSub(Subjects.Angular);
-    // // this.logStudentName(students);
-
-
-    // //let str : [number, string] = ['A+', 5];
 
   }
 
@@ -91,18 +53,16 @@ export class AppComponent implements OnInit  {
     let str: Array<string> = ['Apple', 'Banana'];
     console.log(str);
   }
-  
+
+ 
   getStudents() : any {
     let students = [
       {
         'name': 'Khilen',
-        'age': 34,
-        'rNo': 1005,
-        'id': 1,
-        'favSubject': Subjects.Angular
+        age:12
       },
       {
-        'name': 'Akash',
+        name: 'Akash',
         'age': 21,
         'rNo': 1006,
         'id': 2,
@@ -146,31 +106,36 @@ export class AppComponent implements OnInit  {
     return minAge;
   }
 
-  // getStudentByFavSub(favSub : Subjects) : Array<string> {
-  //   let allStudents = this.getStudents();
-  //   let filteredStudents : string[] = [];
+  logStudent(no: number) : string;
+  logStudent(name: string): string;
+  logStudent(no: number, name: string): string;
+  logStudent(no: any): string {
 
-  //   for (let student of allStudents) {
-  //     if (student.favSubject == favSub) {
-  //       filteredStudents.push(student.name);
-  //     }
-  //   }
+    if ( typeof no == 'number') {
 
-  //   return filteredStudents;
-  // }
-  logStudentName(id: string): void;
-  logStudentName(name: string[]): void;
-  logStudentName(name: any): void {
-    console.log('here');
-    for (let nm of name) {
-      console.log(nm);
     }
+
+    if (typeof no == 'string') {
+
+    }
+
+    return;
   }
 
-  
-  getStudentsFor(name, ...id:number[]): void {
 
+  getStudentsRest(name: string, ...no: number[]): string {
+
+    console.log(name);
+    console.log(no);
+
+    for (let n of no) {
+      console.log('value of n:', n);
+
+    }
+
+    return;
   }
+
 
   createStudentsId(name: string, id?: number): string {
     return name + id;
