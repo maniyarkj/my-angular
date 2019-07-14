@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subjects } from './subjects';
+import {Student, StringGenerator} from './interface';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit  {
   no: number = 42;
   flag : boolean = false;
 
+ 
 
   ngOnInit(): void {
     
@@ -28,17 +30,17 @@ export class AppComponent implements OnInit  {
 
     // 10-July-2019
 
-    let test : (name: string, no: number) => string;
-    test = this.createStudentsId;
+    // let test : (name: string, no: number) => string;
+    // test = this.createStudentsId;
    
-    let newId: string = test('khilen', 12);
-    console.log(newId);
+    // let newId: string = test('khilen', 12);
+    // console.log(newId);
 
-    let requiredOptional = this.createStudentsId('Khilen');
+    // let requiredOptional = this.createStudentsId('Khilen');
 
     // Calling Rest
 
-    console.log(this.getStudentsRest('Khilen', 1,2));
+    // console.log(this.getStudentsRest('Khilen', 1,2));
 
     // 'khilen', [1,2,3]
   }
@@ -46,7 +48,8 @@ export class AppComponent implements OnInit  {
   title = 'myYouTube';
 
   constructor() {
-
+    let message : StringGenerator;
+    console.log(message('khilen', 5));
   }
 
   test() {
@@ -55,43 +58,56 @@ export class AppComponent implements OnInit  {
   }
 
  
-  getStudents() : any {
+  getStudents() : Student[] {
     let students = [
       {
-        'name': 'Khilen',
-        age:12
+        name: 'Khilen',
+        'age': 21,
+        'rNo': 1006,
+        'id': 2,
+        'favSubject': Subjects.Java,
+        hobby: 'Cricket',
+        bdate: '1975'
       },
       {
         name: 'Akash',
         'age': 21,
         'rNo': 1006,
         'id': 2,
-        'favSubject': Subjects.Java
+        'favSubject': Subjects.Java,
+        hobby: 'Cricket',
+        bdate: '1975'
       },
       {
         'name': 'Nisarg',
         'age': 22,
         'rNo': 1007,
         'id': 3,
-        'favSubject': Subjects[".Net"]
+        'favSubject': Subjects[".Net"],
+        hobby: 'Cricket',
+        bdate: '1975'
       },
       {
         'name': 'Rajesh',
         'age': 24,
         'rNo': 1008,
         'id': 4,
-        'favSubject': Subjects[Subjects.Java]
+        'favSubject': Subjects.Java,
+        hobby: 'Cricket',
+        bdate: '1975'
       },
       {
         'name': 'Rakesh',
         'age': 22,
         'rNo': 1009,
         'id': 5,
-        'favSubject': Subjects.Python
+        'favSubject': Subjects.Python,
+        hobby: 'Cricket',
+        bdate: '1975'
       }
     ];
 
-    return students;
+    return  students;
   }
 
   findMinimumAge(students): number {
@@ -123,18 +139,18 @@ export class AppComponent implements OnInit  {
   }
 
 
-  getStudentsRest(name: string, ...no: number[]): string {
+  // getStudentsRest(name: string, ...no: number[]): string {
 
-    console.log(name);
-    console.log(no);
+  //   console.log(name);
+  //   console.log(no);
 
-    for (let n of no) {
-      console.log('value of n:', n);
+  //   for (let n of no) {
+  //     console.log('value of n:', n);
 
-    }
+  //   }
 
-    return;
-  }
+  //   return;
+  // }
 
 
   createStudentsId(name: string, id?: number): string {
