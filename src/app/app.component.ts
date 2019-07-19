@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'pm-root',
+  // templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  template: '<app-video></app-video>'
 })
 
 export class AppComponent{
