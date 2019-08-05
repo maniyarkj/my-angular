@@ -1,0 +1,38 @@
+<h1> {{ pageTitle }}  </h1>
+<br />
+<br />
+{{ 10*5 }}
+<br />
+<br />
+{{ printPageTitle() }}
+
+<br />
+<br />
+First Name : {{ myObj.firstName }}
+Last Name : {{ myObj.lastName }}
+<br />
+<br />
+Track : {{ avdObj.track }}
+<br />
+<br />
+Maths : {{ myObj.marks.maths }}
+<br />
+<br />
+Skills : {{ myObj.skills[0].name }}
+Skills : {{ myObj.skills[1].name }}
+Skills : {{ myObj.skills[2].name }}
+
+
+<table border="1">
+    <tr *ngFor="let skill of myObj.skills">
+        <td> {{ skill.id }} </td>
+        <td>{{ skill.name }}</td>
+        <td *ngFor="let dt of skill.daily_timing">
+            {{ dt.mon }}
+            <br />
+            {{ dt.tue }}
+            <br />
+            {{ dt.wed }}
+        </td>
+    </tr>
+</table>
