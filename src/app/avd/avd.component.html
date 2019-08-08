@@ -22,11 +22,13 @@ Skills : {{ myObj.skills[0].name }}
 Skills : {{ myObj.skills[1].name }}
 Skills : {{ myObj.skills[2].name }}
 
+<!-- ngModel -->
 
-<table border="1">
+<table *ngIf="showTable == true" border="1">
     <tr *ngFor="let skill of myObj.skills">
         <td> {{ skill.id }} </td>
         <td>{{ skill.name }}</td>
+        <td><button type="button" (click)="callClickFunction(skill.id)">Click Me!</button></td>
         <td *ngFor="let dt of skill.daily_timing">
             {{ dt.mon }}
             <br />
@@ -36,3 +38,8 @@ Skills : {{ myObj.skills[2].name }}
         </td>
     </tr>
 </table>
+
+
+<input type="text" name="t1" [(ngModel)]="myValue" />
+
+<!-- <button type="submit" (click)="callClickFunction()">Click Me!</button> -->

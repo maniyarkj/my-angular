@@ -5,22 +5,25 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VideoListComponent } from './video/video-list.component';
 import {NgSelectModule} from '@ng-select/ng-select';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AudioComponent } from './audio/audio.component';
 import { AVDComponent } from './avd/avd.component';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoListComponent,
     AudioComponent,
-    AVDComponent
+    AVDComponent,
+    FormsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [AppComponent]
 })

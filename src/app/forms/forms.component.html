@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <h1>Registration Form</h1>
+        </div>
+    </div>
+    <form [formGroup]="myForm">
+        <div class="row">
+            <label class="col-lg-12 col-md-12 col-sm-12">Name</label>
+            <input name="full_name" [(ngModel)]="name" formControlName="full_name" type="text" class="col-lg-12 col-md-12 col-sm-12" />
+        </div>
+
+        <div class="row">
+            <label class="col-lg-12 col-md-12 col-sm-12">DOB</label>
+            <input name="dob" [(ngModel)]="dob" formControlName="date_of_birth"  type="date" class="col-lg-12 col-md-12 col-sm-12" />
+        </div>
+
+        <div class="row">
+            <label class="col-lg-12 col-md-12 col-sm-12">Email</label>
+            <input name="email" [(ngModel)]="email" formControlName="emailId" type="email" class="col-lg-12 col-md-12 col-sm-12" />
+        </div>
+
+        <div class="row">
+            <label class="col-lg-12 col-md-12 col-sm-12">Mobile</label>
+            <input name="mobile" [(ngModel)]="mobile" formControlName="mobile_number" type="number" class="col-lg-12 col-md-12 col-sm-12" />
+        </div>
+
+        <div class="row">
+            <label class="col-lg-12 col-md-12 col-sm-12">Password</label>
+            <input name="password" [(ngModel)]="password" formControlName="password_control" type="password" class="col-lg-12 col-md-12 col-sm-12" />
+        </div>
+
+        <div class="row">
+            <label class="col-lg-12 col-md-12 col-sm-12">Confirm Password</label>
+            <input name="cpassword" type="password" formControlName="c_password_control" class="col-lg-12 col-md-12 col-sm-12" />
+        </div>
+
+        <div class="row">
+            <label class="col-lg-12 col-md-12 col-sm-12">Gender</label>
+            <input name="gender" [(ngModel)]="gender" formControlName="member_gender" type="radio" value="Male" />Male
+            <input name="gender" [(ngModel)]="gender" formControlName="member_gender" type="radio" value="Female" />Female
+        </div>
+
+        <div class="row">
+            <button type="submit" class="col-lg-12 col-md-12 col-sm-12" (click)="submitData()">Submit Data</button>
+        </div>
+    </form>
+</div>
+
+

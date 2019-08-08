@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'pm-root',
   // templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  template: '<app-avd></app-avd>'
+  template: '<app-forms></app-forms>'
 })
 
 export class AppComponent{

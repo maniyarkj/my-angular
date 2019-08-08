@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AVDComponent {
     pageTitle: string = 'AVD Page';
     myArray = [];
+    showTable: boolean = true;
+    myValue: string;
     myObj = {
 
     }
@@ -54,34 +56,34 @@ export class AVDComponent {
                 {
                     id: 2,
                     name: 'Surf',
-                    daily_timing: [
-                        {
-                            'mon': '9 to 6',
-                            'tue': '9 to 5',
-                            'wed': '9 to 3'
-                        },
-                        {
-                            'mon': '9 to 6',
-                            'tue': '9 to 5',
-                            'wed': '9 to 3'
-                        }
-                    ]
+                    // daily_timing: [
+                    //     {
+                    //         'mon': '9 to 6',
+                    //         'tue': '9 to 5',
+                    //         'wed': '9 to 3'
+                    //     },
+                    //     {
+                    //         'mon': '9 to 6',
+                    //         'tue': '9 to 5',
+                    //         'wed': '9 to 3'
+                    //     }
+                    // ],
                 },
                 {
                     id: 3,
                     name: "Reading",
-                    daily_timing: [
-                        {
-                            'mon': '9 to 6',
-                            'tue': '5 to 7',
-                            'wed': '4 to 4'
-                        },
-                        {
-                            'mon': '9 to 6',
-                            'tue': '5 to 7',
-                            'wed': '4 to 4'
-                        }
-                    ]
+                    // daily_timing: [
+                    //     {
+                    //         'mon': '9 to 6',
+                    //         'tue': '5 to 7',
+                    //         'wed': '4 to 4'
+                    //     },
+                    //     {
+                    //         'mon': '9 to 6',
+                    //         'tue': '5 to 7',
+                    //         'wed': '4 to 4'
+                    //     }
+                    // ]
                 }
             ]
         };
@@ -96,5 +98,10 @@ export class AVDComponent {
 
     printPageTitle(): string {
         return this.pageTitle;
+    }
+
+    callClickFunction(id: number) : void {
+        alert("Selected ID : "+ id);
+        console.log(this.myValue);
     }
 }
