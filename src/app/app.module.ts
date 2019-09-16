@@ -3,22 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VideoListComponent } from './video/video-list.component';
 import {NgSelectModule} from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AudioComponent } from './audio/audio.component';
-import { AVDComponent } from './avd/avd.component';
-import { FormsComponent } from './forms/forms.component';
-import { ChildComponent } from './child/child.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VideoListComponent,
-    AudioComponent,
-    AVDComponent,
-    FormsComponent,
-    ChildComponent
+    HomeComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
