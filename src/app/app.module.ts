@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AudioComponent } from './audio/audio.component';
 import { AVDComponent } from './avd/avd.component';
 import { FormsComponent } from './forms/forms.component';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsComponent } from './forms/forms.component';
     VideoListComponent,
     AudioComponent,
     AVDComponent,
-    FormsComponent
+    FormsComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

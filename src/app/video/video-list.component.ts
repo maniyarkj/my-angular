@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck } from '@angular/core';
 
 @Component({
     selector: 'app-video',
@@ -6,29 +6,24 @@ import { Component, OnInit } from '@angular/core';
 })
 
 // Class
-export class VideoListComponent implements OnInit {
-    videoList = [];
-    selectedVideo: '';
-    pageTitle= 'Video List';
-    myObj = {};
-    myVideo = [];
-    arr = [];
+export class VideoListComponent implements OnInit, OnChanges, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+    // videoList = [];
+    // selectedVideo: '';
+    // pageTitle= 'Video List';
+    // myObj = {};
+    // myVideo = [];
+    // arr = [];
+    firstName = 'Rakesh';
     constructor() {
-
+        console.log('Name : ', this.firstName);
     }
 
-    ngOnInit() {
-      
-
-        this.myVideo = this.videoList.map(
-            item => {
-                return {
-                    value: item.value,
-                    label: item.label
-                }
-            }
-        );
-
-
-    }
+    ngOnDestroy() {}
+    ngAfterViewChecked(){}
+    ngAfterViewInit() {}
+    ngAfterContentChecked() {}
+    ngAfterContentInit() {}
+    ngDoCheck() {}
+    ngOnChanges() { }
+    ngOnInit() {}
 }

@@ -1,10 +1,10 @@
-<div class="container first second thired" ngClass="">
+<!-- <div class="container first second thired" ngClass="">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <h1>Registration Form</h1>
         </div>
     </div>
-    <!-- <form [formGroup]="myForm">
+    <form [formGroup]="myForm">
         <div class="row">
             <label class="col-lg-12 col-md-12 col-sm-12">Name</label>
             <input name="full_name" formControlName="full_name" type="text" class="col-lg-12 col-md-12 col-sm-12" />
@@ -45,7 +45,7 @@
             <button class="col-lg-1 col-md-1 col-sm-1" (click)="reloadFormData()">Reload Data</button>
             <button type="submit" class="col-lg-1 col-md-1 col-sm-1" (click)="submitData()">Submit Data</button>
         </div>
-    </form> -->
+    </form>
 
 
     <div [ngSwitch]="myDir">
@@ -67,7 +67,7 @@
                 <td>{{p.age}}</td>
             </ng-container>
         </tr>
-        <!-- <tr ngClass="odd">
+        <tr ngClass="odd">
             <td class="col-md-2">1</td>
             <td class="col-md-8 text-left">Khilen</td>
             <td class="col-md-2">34</td>
@@ -91,8 +91,25 @@
             <td class="col-md-2">5</td>
             <td class="col-md-8 text-left">Sanket</td>
             <td class="col-md-2">22</td>
-        </tr> -->
+        </tr>
     </table>
 </div>
 
+ -->
 
+ <a (click)="sendToChild()">Click</a>
+<app-child [aakash]="data1" (result)="gotResult($event)"></app-child>
+<!-- <app-child [aakash]="data2" (result)="gotResult($event)"></app-child>
+<app-child [aakash]="data3" (result)="gotResult($event)"></app-child>
+<app-child [aakash]="data4" (result)="gotResult($event)"></app-child> -->
+
+
+<input type="text" [(ngModel)]="name" />
+
+Name : {{ name }}
+
+<input type="text" [(ngModel)]="surname" />
+
+surname : {{ surname }}
+
+ 
