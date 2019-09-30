@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
 })
 export class AboutComponent {
 
+    thisIsparent: string = 'Hello Parent';
+    
+
 }

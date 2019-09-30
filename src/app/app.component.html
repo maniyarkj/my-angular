@@ -1,11 +1,31 @@
-<div class="menu">
-  <a [routerLink]="['/home']">Home</a>
-  <a [routerLink]="['/about']">About Us</a>
-  <a [routerLink]="['/contact']">Contact Us</a>
+
+
+<div class="header">
+  <h1>Page Title = {{ pageTitle }}</h1>
+  <div class="menu">
+    <a [routerLink]="['/home']">Home</a>
+    <a [routerLink]="['/about']">About Us</a>
+    <a [routerLink]="['/contact']">Contact Us</a>
+    <a [routerLink]="['/authentication/login']">Login</a>
+    <a [routerLink]="['/authentication/forgot']">Forgot</a>
+  </div>
+  
+</div>
+
+<div class="content">
+  <div class="col-md-2 left-menu" style="width: 200px;">
+    This is My Left Menu
+  </div>
+  <div class="col-md-10 original">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class="footer">
+  It will have links of Entire Website
 </div>
 
 
-<router-outlet></router-outlet>
 
 <!-- Router Link
 Router Outlet

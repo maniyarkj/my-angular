@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { AuthService } from './authentication/services/auth.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ContactComponent } from './contact/contact.component';
     FormsModule,
     ReactiveFormsModule,
   ],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

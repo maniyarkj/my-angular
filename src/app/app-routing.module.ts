@@ -22,6 +22,10 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
+  {
+    path: 'authentication',
+    loadChildren: './authentication/authorization.module#AuthModule'
+  }
 ];
 
 @NgModule({
