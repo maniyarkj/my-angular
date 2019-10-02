@@ -9,3 +9,14 @@ Password
 <button type="submit" value="Login" (click)="login()">Login</button>
 
 <a>Forgot Password ?</a>
+
+<table myForm>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+    </tr>
+    <tr *ngFor="let d from data">
+        <td>{{d.id}}</td>
+        <td>{{d.name}}</td>
+    </tr>
+</table>

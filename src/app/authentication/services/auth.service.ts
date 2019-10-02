@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
     user: any = {};
+    dataFile = 'assets/data.json';
 
-    constructor() {
-
+    constructor(public http: HttpClient) {
     }
 
     setUserData(obj): void {
@@ -17,4 +18,13 @@ export class AuthService {
     getUserData() : any {
         return this.user;
     }
+
+    getDataFromFile() : any {
+        // get
+        // put
+        // post
+
+        return this.http.get(this.dataFile);
+    }
+
 }

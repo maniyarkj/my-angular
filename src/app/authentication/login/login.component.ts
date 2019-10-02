@@ -9,33 +9,43 @@ import { AuthService } from '../services/auth.service';
 export class LoginComponent {
     userName: string;
     passWord: string;
+    data: any;
 
     constructor(public _route: Router, public authService: AuthService) {
 
     }
 
     login() : void {
-        // console.log('Called Login');
-        console.log(this.userName);
-        console.log(this.passWord);
+        // // console.log('Called Login');
+        // console.log(this.userName);
+        // console.log(this.passWord);
 
-        let id = 150;
+        // let id = 150;
 
-        let loginObj = {
-            'userName': this.userName,
-            'passWord': this.passWord
-        };
+        // let loginObj = {
+        //     'userName': this.userName,
+        //     'passWord': this.passWord
+        // };
 
-        // this.authService.setUserData(loginObj);
-        // this._route.navigateByUrl('authentication/forgot');
+        // // this.authService.setUserData(loginObj);
+        // // this._route.navigateByUrl('authentication/forgot');
 
-        this._route.navigate(['authentication/forgot'], {
-            queryParams : {
-                'userName': this.userName,
-                'password': this.passWord,
-                'id': 150
+        // this._route.navigate(['authentication/forgot'], {
+        //     queryParams : {
+        //         'userName': this.userName,
+        //         'password': this.passWord,
+        //         'id': 150
+        //     }
+        // });
+
+        this.authService.getDataFromFile().subscribe(
+            res => {
+                console.log(res);
+                this.data = res;
+            },
+            err => {
+                console.log(err);
             }
-        });
-
+        )
     }
 }
