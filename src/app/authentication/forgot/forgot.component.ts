@@ -31,4 +31,13 @@ export class ForgotComponent {
         this.userObj = this.authService.getUserData();
         console.log(this.userObj);
     }
+
+    postUserData() {
+        
+    }
+
+    getForgotData() {
+        this.authService.getForgotData();
+
+    }
 }

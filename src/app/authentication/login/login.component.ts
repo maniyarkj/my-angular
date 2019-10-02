@@ -38,7 +38,13 @@ export class LoginComponent {
         //     }
         // });
 
-        this.authService.getDataFromFile().subscribe(
+        let reqParam = {
+            'USER_NAME': this.userName,
+            'PASSWORD': this.passWord
+        }
+        
+
+        this.authService.getLoginData(reqParam).subscribe(
             res => {
                 console.log(res);
                 this.data = res;

@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthService } from './authentication/services/auth.service';
 import { HttpClientModule} from '@angular/common/http';
+import { HttpServices } from './scripts/services/http.services';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, HttpServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
