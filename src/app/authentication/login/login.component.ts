@@ -43,7 +43,6 @@ export class LoginComponent {
             'PASSWORD': this.passWord
         }
         
-
         this.authService.getLoginData(reqParam).subscribe(
             res => {
                 console.log(res);

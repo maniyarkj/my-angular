@@ -14,9 +14,13 @@ Password
     <tr>
         <td>ID</td>
         <td>Name</td>
+        <td>B Date</td>
+<!--         <td>Age In Days</td> -->
     </tr>
-    <!-- <tr *ngFor="let d from data">
+    <tr *ngFor="let d of data">
         <td>{{d.id}}</td>
-        <td>{{d.name}}</td>
-    </tr> -->
+        <td>{{d.name | uppercase }}</td>
+        <td>{{d.bdate  | daysFromToday:'d.bdate' }}</td>
+<!--         <td>Total Days from Birth : {{d.bdate | daysFromBirth:d.bdate }}</td> -->
+    </tr>
 </table>

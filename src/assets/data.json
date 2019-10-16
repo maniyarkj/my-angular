@@ -1,26 +1,32 @@
 [
     {
         "id": 1,
-        "name": "Khilen"
+        "name": "Khilen",
+        "bdate": "11/18/1985"
     },
     {
         "id": 2,
-        "name": "Rakesh"
+        "name": "Rakesh",
+        "bdate": "12/18/2005"
     },
     {
         "id": 3,
-        "name": "Nisarg"
+        "name": "Nisarg",
+        "bdate": "01/28/1975"
     },
     {
         "id": 4,
-        "name": "Sanket"
+        "name": "Sanket",
+        "bdate": "02/08/1995"
     },
     {
         "id": 6,
-        "name": "Ashaka"
+        "name": "Ashaka",
+        "bdate": "03/14/1997"
     },
     {
         "id": 5,
-        "name": "Hemin"
+        "name": "Hemin",
+        "bdate": "11/18/1985"
     }
 ]

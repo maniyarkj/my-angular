@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpServices } from 'src/app/scripts/services/http.services';
+import { Observable } from 'rxjs';
+import { IData } from 'src/app/interfaces/data.interface';
 
 @Injectable()
 export class AuthService {
@@ -20,16 +22,14 @@ export class AuthService {
         return this.user;
     }
 
-    getLoginData(data: any): any {
+    getLoginData(data?: any): any {
         console.log(data);
 
-        return this.httpService.httpGetMethod('V_USER_LOGIN', 'SELECT', data);
+        
+        return this.httpService.httpFileGet(); //this.httpService.httpGetMethod('V_USER_LOGIN', 'SELECT', data);
     }
-
-    
 
     getForgotData(): any {
         // return this.httpService.httpGetMethod();
     }
-
 }

@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Constants } from '../constants/constants';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { IData } from 'src/app/interfaces/data.interface';
 
 @Injectable()
 
@@ -11,11 +14,21 @@ export class HttpServices {
 
     }
 
-    httpGetMethod(endPoint, method, data) : any {
+    httpFileGet(endPoint?, method?, data?) : Observable<IData[]> {
+        return this.http.get<IData[]>('assets/data.json')
+            .pipe(
+            catchError((err: HttpErrorResponse) => {
+                return Observable.throw(err.message || 'Server Error');
+            })
+        )
+    }
+                        
 
-        console.log(endPoint);
-        console.log(method);
-        console.log(data);
+    httpGetMethod(endPoint?, method?, data?) : any {
+
+        // console.log(endPoint);
+        // console.log(method);
+        // console.log(data);
 
         let requestObject = {'ACTION': method};
         !!data && (requestObject = Object.assign(requestObject, data));
@@ -27,8 +40,11 @@ export class HttpServices {
         // let url = this.baseURL + endPoint;
     
         let httpHeaders = new HttpHeaders()
-        .set('Content-type', 'application/json');
+        .set('Content-type', 'application/json')
+        .set('Aut','');
+        
         return this.http.get(url, {headers: httpHeaders});
+        //return this.http.get(Constants.dummyURL);
     }
 
     httpPutMethod(data, id) : any {

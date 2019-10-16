@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { CommonModule } from '@angular/common';
+import { FindDaysBetweenDates } from '../scripts/myPipes/days.pipe';
 
 
 const routes: Routes = [
@@ -21,11 +23,12 @@ const routes: Routes = [
     imports: [
         RouterModule.forChild(routes),
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CommonModule
     ],
     
     exports: [RouterModule],
-    declarations: [LoginComponent, ForgotComponent]
+    declarations: [LoginComponent, ForgotComponent, FindDaysBetweenDates]
 })
 
 export class AuthModule {
